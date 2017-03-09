@@ -46,3 +46,23 @@ describe('Translating "category-1" double-digit integers to English equivalent',
     expect(expected).to.be.eql(actual)
   })
 })
+
+describe('Translating "category-2" double-digit integers to English equivalent', function () {
+  it('should return Thirteen', function () {
+    var expected = 'Thirteen'
+    var actual = numberTranslator.translateToEnglish(13)
+    expect(expected).to.be.eql(actual)
+  })
+
+	it('should return Fourteen', function () {
+    var expected = 'Fourteen'
+    var actual = numberTranslator.translateToEnglish(14)
+    expect(expected).to.be.eql(actual)
+  })
+
+	it('should return Fifteen', function () {
+    var expected = 'Fifteen'
+    var actual = numberTranslator.translateToEnglish(15)
+    expect(expected).to.be.eql(actual)
+  })
+})
