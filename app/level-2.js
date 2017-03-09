@@ -24,19 +24,21 @@ class NumberTranslator {
     if (input <= 12) {
       output = this.map[input]
     } else if (input <= 15) {
-      output = this.addStringPrefixForCategory2Numbers(input)
+      output = this.translateCategory2Numbers(input)
     } else if (input <= 19) {
-      output = this.addStringPrefixForCategory3Numbers(input)
+      output = this.translateCategory3Numbers(input)
     }
 
     var capitalizedOutput = output.charAt(0).toUpperCase() + output.slice(1)
     return capitalizedOutput
   }
 
-  addStringPrefixForCategory2Numbers (num) {
+  translateCategory2Numbers (num) {
     var string = num.toString()
     var output
-    if (string.indexOf('3') !== -1) {
+		if (string.indexOf('2') !== -1) {
+      output = 'twen'
+    } else if (string.indexOf('3') !== -1) {
       output = 'thir'
     } else if (string.indexOf('4') !== -1) {
       output = 'four'
@@ -46,7 +48,7 @@ class NumberTranslator {
     return output + 'teen'
   }
 
-  addStringPrefixForCategory3Numbers (num) {
+  translateCategory3Numbers (num) {
     var keyDigit = parseInt(num.toString().split('')[1])
     var output = this.map[keyDigit]
     console.log(output)
