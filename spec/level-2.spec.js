@@ -40,7 +40,7 @@ describe('Translating "category-1" double-digit integers to English equivalent',
     expect(expected).to.be.eql(actual)
   })
 
-	it('should return Twelve', function () {
+  it('should return Twelve', function () {
     var expected = 'Twelve'
     var actual = numberTranslator.translateToEnglish(12)
     expect(expected).to.be.eql(actual)
@@ -54,15 +54,29 @@ describe('Translating "category-2" double-digit integers to English equivalent',
     expect(expected).to.be.eql(actual)
   })
 
-	it('should return Fourteen', function () {
+  it('should return Fourteen', function () {
     var expected = 'Fourteen'
     var actual = numberTranslator.translateToEnglish(14)
     expect(expected).to.be.eql(actual)
   })
 
-	it('should return Fifteen', function () {
+  it('should return Fifteen', function () {
     var expected = 'Fifteen'
     var actual = numberTranslator.translateToEnglish(15)
+    expect(expected).to.be.eql(actual)
+  })
+})
+
+describe('Translating "category-3" double-digit integers to English equivalent', function () {
+  it('should return Sixteen', function () {
+    var expected = 'Sixteen'
+    var actual = numberTranslator.translateToEnglish(16)
+    expect(expected).to.be.eql(actual)
+  })
+
+  it('should return Nineteen', function () {
+    var expected = 'Nineteen'
+    var actual = numberTranslator.translateToEnglish(19)
     expect(expected).to.be.eql(actual)
   })
 })

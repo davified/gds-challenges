@@ -13,14 +13,20 @@
 */
 
 class NumberTranslator {
+  constructor () {
+    this.map = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine', 10: 'ten', 11: 'eleven', 12: 'twelve'}
+  }
+
   translateToEnglish (input) {
     var output
-    var map = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine', 10: 'ten', 11: 'eleven', 12: 'twelve'}
+
 		// , 13: 'thirteen', 14: 'fourteen', 15: 'fifteen', 16: 'sixteen', 17: 'seventeen', 18: 'eighteen', 19: 'nineteen'
     if (input <= 12) {
-      output = map[input]
-    } else if (input <= 19) {
+      output = this.map[input]
+    } else if (input <= 15) {
       output = this.addStringPrefixForCategory2Numbers(input)
+    } else if (input <= 19) {
+      output = this.addStringPrefixForCategory3Numbers(input)
     }
 
     var capitalizedOutput = output.charAt(0).toUpperCase() + output.slice(1)
@@ -37,6 +43,13 @@ class NumberTranslator {
     } else if (string.indexOf('5') !== -1) {
       output = 'fif'
     }
+    return output + 'teen'
+  }
+
+  addStringPrefixForCategory3Numbers (num) {
+    var keyDigit = parseInt(num.toString().split('')[1])
+    var output = this.map[keyDigit]
+    console.log(output)
     return output + 'teen'
   }
 }
