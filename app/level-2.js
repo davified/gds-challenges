@@ -51,7 +51,7 @@ class NumberTranslator {
   }
 
   translateCategory3Numbers (num) {
-    var keyDigit = parseInt(num.toString().split('')[1])
+    var keyDigit = this.getDigitAtPosition(num, 1)
     return this.map[keyDigit]
   }
 
@@ -69,7 +69,6 @@ class NumberTranslator {
       secondString = this.map[remainder]
       output = firstString + ' ' + secondString
     }
-
     return output
   }
 
