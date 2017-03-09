@@ -13,10 +13,12 @@
 */
 
 class NumberTranslator {
-  translateToEnglish (string) {
-		var output = 'one'
-		var capitalizedOutput = output.charAt(0).toUpperCase() + output.slice(1)
-		return capitalizedOutput
+  translateToEnglish (input) {
+    var map = {1: 'one', 2: 'two'}
+
+    var output = map[input]
+    var capitalizedOutput = output.charAt(0).toUpperCase() + output.slice(1)
+    return capitalizedOutput
   }
 }
 

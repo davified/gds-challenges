@@ -13,4 +13,10 @@ describe('Collpasing single strings', function () {
     var actual = numberTranslator.translateToEnglish(1)
     expect(expected).to.be.eql(actual)
   })
+
+	it('should return Two', function () {
+    var expected = 'Two'
+    var actual = numberTranslator.translateToEnglish(2)
+    expect(expected).to.be.eql(actual)
+  })
 })
