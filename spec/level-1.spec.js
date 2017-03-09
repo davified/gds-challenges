@@ -13,4 +13,10 @@ describe('Collpasing single strings', function () {
     var actual = stringCollapser.collapse('Ooo')
     expect(expected).to.be.eql(actual)
   })
+
+  it('should return Oo', function () {
+    var expected = 'Aa'
+    var actual = stringCollapser.collapse('Aaa')
+    expect(expected).to.be.eql(actual)
+  })
 })
