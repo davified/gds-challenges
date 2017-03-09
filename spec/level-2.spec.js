@@ -14,19 +14,19 @@ describe('Translating single integers to English equivalent', function () {
     expect(expected).to.be.eql(actual)
   })
 
-	it('should return Two', function () {
+  it('should return Two', function () {
     var expected = 'Two'
     var actual = numberTranslator.translateToEnglish(2)
     expect(expected).to.be.eql(actual)
   })
 
-	it('should return Eight', function () {
+  it('should return Eight', function () {
     var expected = 'Eight'
     var actual = numberTranslator.translateToEnglish(8)
     expect(expected).to.be.eql(actual)
   })
 
-	it('should return Nine', function () {
+  it('should return Nine', function () {
     var expected = 'Nine'
     var actual = numberTranslator.translateToEnglish(9)
     expect(expected).to.be.eql(actual)
