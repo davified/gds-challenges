@@ -24,9 +24,11 @@ class NumberTranslator {
     if (input <= 12) {
       output = this.map[input]
     } else if (input <= 15) {
-      output = this.translateCategory2Numbers(input)
+      output = this.translateCategory2Numbers(input) + 'teen'
     } else if (input <= 19) {
-      output = this.translateCategory3Numbers(input)
+      output = this.translateCategory3Numbers(input) + 'teen'
+    } else {
+      output = this.translateCategory4Numbers(input)
     }
 
     var capitalizedOutput = output.charAt(0).toUpperCase() + output.slice(1)
@@ -36,23 +38,43 @@ class NumberTranslator {
   translateCategory2Numbers (num) {
     var string = num.toString()
     var output
-		if (string.indexOf('2') !== -1) {
-      output = 'twen'
+    if (string.indexOf('2') !== -1) {
+      return 'twen'
     } else if (string.indexOf('3') !== -1) {
-      output = 'thir'
+      return 'thir'
     } else if (string.indexOf('4') !== -1) {
-      output = 'four'
+      return 'four'
     } else if (string.indexOf('5') !== -1) {
-      output = 'fif'
+      return 'fif'
     }
-    return output + 'teen'
+    return output
   }
 
   translateCategory3Numbers (num) {
     var keyDigit = parseInt(num.toString().split('')[1])
-    var output = this.map[keyDigit]
-    console.log(output)
-    return output + 'teen'
+    return this.map[keyDigit]
+  }
+
+  translateCategory4Numbers (num) {
+    if (num % 40 === 0) {
+      return 'forty'
+    }
+    var output, firstString, secondString
+    var remainder = num % 10
+    var firstDigit = this.getDigitAtPosition(num, 0)
+    if (remainder === 0) {
+      output = this.translateCategory2Numbers(num) + 'ty'
+    } else {
+      firstString = this.translateCategory2Numbers(firstDigit) + 'ty'
+      secondString = this.map[remainder]
+      output = firstString + ' ' + secondString
+    }
+
+    return output
+  }
+
+  getDigitAtPosition (num, index) {
+    return parseInt(num.toString().split('')[index])
   }
 }
 
