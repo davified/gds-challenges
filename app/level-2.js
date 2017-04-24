@@ -59,7 +59,8 @@ class NumberTranslator {
     if (num % 40 === 0) {
       return 'forty'
     }
-    var output, firstString, secondString
+
+		var output, firstString, secondString
     var remainder = num % 10
     var firstDigit = this.getDigitAtPosition(num, 0)
     if (remainder === 0) {
